@@ -1,0 +1,165 @@
+{
+  "common": {
+    "currency": "BRL",
+    "search": "Buscar produtos...",
+    "login": "Entrar",
+    "logout": "Sair",
+    "profile": "Perfil",
+    "orders": "Pedidos",
+    "adminPanel": "Painel Admin",
+    "addToCart": "Adicionar ao Carrinho",
+    "outOfStock": "Fora de Estoque",
+    "inStock": "Em Estoque",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "create": "Criar",
+    "actions": "Ações",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso"
+  },
+  "nav": {
+    "products": "Produtos",
+    "categories": "Categorias",
+    "about": "Sobre"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Visão Geral",
+      "totalSales": "Vendas Totais",
+      "totalOrders": "Pedidos Totais",
+      "lowStock": "Estoque Baixo",
+      "pendingPayments": "Pagamentos Pendentes"
+    },
+    "products": {
+      "title": "Produtos",
+      "list": "Lista de Produtos",
+      "create": "Criar Produto",
+      "edit": "Editar Produto",
+      "name": "Nome",
+      "price": "Preço",
+      "stock": "Estoque",
+      "category": "Categoria",
+      "sku": "SKU",
+      "description": "Descrição",
+      "images": "Imagens",
+      "slug": "Slug"
+    },
+    "inventory": {
+      "title": "Estoque",
+      "movements": "Movimentações",
+      "adjust": "Ajustar Estoque"
+    },
+    "finance": {
+      "title": "Financeiro",
+      "receivable": "Contas a Receber",
+      "payable": "Contas a Pagar",
+      "cashFlow": "Fluxo de Caixa"
+    },
+    "banners": {
+      "title": "Banners",
+      "manage": "Gerenciar Banners"
+    },
+    "users": {
+      "title": "Usuários",
+      "manage": "Gerenciar Usuários"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "products": "Produtos",
+      "inventory": "Estoque",
+      "finance": "Financeiro",
+      "banners": "Banners",
+      "users": "Usuários",
+      "settings": "Configurações"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Descubra Produtos Premium para Seu Estilo de Vida",
+      "description": "Compre a última coleção de produtos de alta qualidade selecionados especialmente para você.",
+      "shopNow": "Comprar Agora",
+      "browseCategories": "Explorar Categorias"
+    },
+    "features": {
+      "freeShipping": {
+        "title": "Frete Grátis",
+        "description": "Em pedidos acima de R$ 250"
+      },
+      "securePayment": {
+        "title": "Pagamento Seguro",
+        "description": "100% de transações seguras"
+      },
+      "support": {
+        "title": "Suporte 24/7",
+        "description": "Atendimento ao cliente dedicado"
+      },
+      "easyReturns": {
+        "title": "Devoluções Fáceis",
+        "description": "Política de devolução de 30 dias"
+      }
+    },
+    "featuredProducts": {
+      "title": "Produtos em Destaque",
+      "description": "Explore nossa seleção de produtos premium escolhidos a dedo",
+      "viewAll": "Ver Todos"
+    },
+    "categories": {
+      "title": "Compre por Categoria",
+      "description": "Encontre exatamente o que procura em nossas categorias curadas",
+      "electronics": "Eletrônicos",
+      "fashion": "Moda",
+      "home": "Casa e Vida"
+    }
+  },
+  "products": {
+    "title": "Produtos",
+    "subtitle": "{count} produtos encontrados",
+    "search": "Buscar produtos...",
+    "category": "Categoria",
+    "allCategories": "Todas as Categorias",
+    "categories": {
+      "electronics": "Eletrônicos",
+      "clothing": "Roupas",
+      "accessories": "Acessórios"
+    },
+    "sortBy": "Ordenar por",
+    "sort": {
+      "newest": "Mais Recentes",
+      "priceAsc": "Menor Preço",
+      "priceDesc": "Maior Preço",
+      "popular": "Mais Popular"
+    }
+  },
+  "product": {
+    "addToCart": "Adicionar ao Carrinho",
+    "addedToCart": "Adicionado ao carrinho",
+    "outOfStock": "Fora de Estoque",
+    "lowStock": "Estoque Baixo",
+    "inStock": "{count} em estoque",
+    "description": "Descrição",
+    "reviews": "avaliações",
+    "sku": "SKU",
+    "category": "Categoria"
+  },
+  "auth": {
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "logout": "Sair",
+    "email": "E-mail",
+    "password": "Senha",
+    "name": "Nome",
+    "loginDescription": "Entre com suas credenciais para acessar o painel admin",
+    "registerDescription": "Crie uma nova conta para começar",
+    "loginError": "Credenciais inválidas",
+    "loginSuccess": "Login realizado com sucesso",
+    "registerError": "Erro ao criar conta",
+    "registerSuccess": "Conta criada com sucesso",
+    "noAccount": "Não tem uma conta?",
+    "hasAccount": "Já tem uma conta?",
+    "loading": "Carregando..."
+  }
+}
