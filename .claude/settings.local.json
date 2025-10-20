@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm run:*)",
+      "Bash(git add package.json pnpm-lock.yaml)",
+      "Bash(git commit -m \"feat: add project dependencies and package configuration\n\n- Add package.json with all project dependencies\n- Configure scripts for dev, build, test, and docker\n- Add pnpm-lock.yaml for consistent dependency resolution\")",
+      "Bash(git add .eslintrc.json .prettierrc)",
+      "Bash(git commit -m \"chore: add ESLint and Prettier configuration\n\n- Configure ESLint with Next.js rules\n- Add Prettier for code formatting\n- Set up consistent code style standards\")",
+      "Bash(git add tsconfig.json jest-dom.d.ts)",
+      "Bash(git commit -m \"chore: add TypeScript configuration\n\n- Configure TypeScript with strict mode\n- Set up path aliases and module resolution\n- Add Jest DOM type definitions\")",
+      "Bash(git add postcss.config.mjs components.json)",
+      "Bash(git commit -m \"chore: add Tailwind CSS and PostCSS configuration\n\n- Configure Tailwind CSS with custom theme\n- Set up PostCSS processing pipeline\n- Add shadcn/ui components configuration\")",
+      "Bash(git add next.config.mjs next.config.docker.mjs)",
+      "Bash(git commit -m \"chore: add Next.js configuration\n\n- Configure Next.js with i18n support\n- Add Docker-specific configuration\n- Set up experimental features and optimizations\")",
+      "Bash(git add Dockerfile docker-compose.yml docker-compose.dev.yml .dockerignore)",
+      "Bash(git commit -m \"chore: add Docker configuration\n\n- Add Dockerfile for containerized deployment\n- Configure docker-compose for development\n- Set up production docker-compose\n- Add .dockerignore for optimized builds\")",
+      "Bash(git add .husky/ commitlint.config.js)",
+      "Bash(git commit -m \"chore: add Husky and Commitlint configuration\n\n- Configure Husky for Git hooks\n- Set up Commitlint with conventional commits\n- Add pre-commit hooks for linting and type checking\")",
+      "Bash(git add .gitignore)",
+      "Bash(git commit -m \"chore: add gitignore configuration\n\n- Ignore node_modules and build artifacts\n- Exclude environment files and secrets\n- Configure for Next.js and common tools\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
