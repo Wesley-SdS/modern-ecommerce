@@ -39,3 +39,6 @@ prisma/migrations/*_migration/
 # Scripts temporários
 commit-all.sh
 commit-rest.sh
+
+# Claude Code settings (local)
+.claude/settings.local.json
