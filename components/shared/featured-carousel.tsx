@@ -86,7 +86,7 @@ export default function FeaturedCarousel({
 
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+      <div className="overflow-hidden rounded-2xl border border-rose-200 shadow-sm" ref={emblaRef}>
         <div className="flex">
           {products.map((product, index) => (
             <div

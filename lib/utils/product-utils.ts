@@ -16,7 +16,7 @@ export function parseProductImages(images: unknown): string[] {
 export function formatProductPrice(priceCents: number, locale: string): string {
   return new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: locale === "pt-BR" ? "BRL" : "USD",
+    currency: "BRL",
   }).format(priceCents / 100)
 }
 
