@@ -1,0 +1,165 @@
+{
+  "common": {
+    "currency": "BRL",
+    "search": "Search products...",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile",
+    "orders": "Orders",
+    "adminPanel": "Admin Panel",
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "inStock": "In Stock",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "actions": "Actions",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "nav": {
+    "products": "Products",
+    "categories": "Categories",
+    "about": "About"
+  },
+  "admin": {
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Overview",
+      "totalSales": "Total Sales",
+      "totalOrders": "Total Orders",
+      "lowStock": "Low Stock",
+      "pendingPayments": "Pending Payments"
+    },
+    "products": {
+      "title": "Products",
+      "list": "Product List",
+      "create": "Create Product",
+      "edit": "Edit Product",
+      "name": "Name",
+      "price": "Price",
+      "stock": "Stock",
+      "category": "Category",
+      "sku": "SKU",
+      "description": "Description",
+      "images": "Images",
+      "slug": "Slug"
+    },
+    "inventory": {
+      "title": "Inventory",
+      "movements": "Movements",
+      "adjust": "Adjust Inventory"
+    },
+    "finance": {
+      "title": "Finance",
+      "receivable": "Accounts Receivable",
+      "payable": "Accounts Payable",
+      "cashFlow": "Cash Flow"
+    },
+    "banners": {
+      "title": "Banners",
+      "manage": "Manage Banners"
+    },
+    "users": {
+      "title": "Users",
+      "manage": "Manage Users"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "products": "Products",
+      "inventory": "Inventory",
+      "finance": "Finance",
+      "banners": "Banners",
+      "users": "Users",
+      "settings": "Settings"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Discover Premium Products for Your Lifestyle",
+      "description": "Shop the latest collection of high-quality products curated just for you.",
+      "shopNow": "Shop Now",
+      "browseCategories": "Browse Categories"
+    },
+    "features": {
+      "freeShipping": {
+        "title": "Free Shipping",
+        "description": "On orders over $250"
+      },
+      "securePayment": {
+        "title": "Secure Payment",
+        "description": "100% secure transactions"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Dedicated customer service"
+      },
+      "easyReturns": {
+        "title": "Easy Returns",
+        "description": "30-day return policy"
+      }
+    },
+    "featuredProducts": {
+      "title": "Featured Products",
+      "description": "Explore our handpicked selection of premium products",
+      "viewAll": "View All"
+    },
+    "categories": {
+      "title": "Shop by Category",
+      "description": "Find exactly what you're looking for in our curated categories",
+      "electronics": "Electronics",
+      "fashion": "Fashion",
+      "home": "Home & Living"
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "{count} products found",
+    "search": "Search products...",
+    "category": "Category",
+    "allCategories": "All Categories",
+    "categories": {
+      "electronics": "Electronics",
+      "clothing": "Clothing",
+      "accessories": "Accessories"
+    },
+    "sortBy": "Sort by",
+    "sort": {
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "popular": "Most Popular"
+    }
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to cart",
+    "outOfStock": "Out of Stock",
+    "lowStock": "Low Stock",
+    "inStock": "{count} in stock",
+    "description": "Description",
+    "reviews": "reviews",
+    "sku": "SKU",
+    "category": "Category"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "loginDescription": "Enter your credentials to access the admin panel",
+    "registerDescription": "Create a new account to get started",
+    "loginError": "Invalid credentials",
+    "loginSuccess": "Login successful",
+    "registerError": "Error creating account",
+    "registerSuccess": "Account created successfully",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loading": "Loading..."
+  }
+}
