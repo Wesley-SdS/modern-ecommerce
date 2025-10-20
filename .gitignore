@@ -35,3 +35,7 @@ next-env.d.ts
 
 # prisma
 prisma/migrations/*_migration/
+
+# Scripts temporários
+commit-all.sh
+commit-rest.sh
