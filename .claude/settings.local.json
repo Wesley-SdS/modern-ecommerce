@@ -17,7 +17,17 @@
       "Bash(git add .husky/ commitlint.config.js)",
       "Bash(git commit -m \"chore: add Husky and Commitlint configuration\n\n- Configure Husky for Git hooks\n- Set up Commitlint with conventional commits\n- Add pre-commit hooks for linting and type checking\")",
       "Bash(git add .gitignore)",
-      "Bash(git commit -m \"chore: add gitignore configuration\n\n- Ignore node_modules and build artifacts\n- Exclude environment files and secrets\n- Configure for Next.js and common tools\")"
+      "Bash(git commit -m \"chore: add gitignore configuration\n\n- Ignore node_modules and build artifacts\n- Exclude environment files and secrets\n- Configure for Next.js and common tools\")",
+      "Bash(git add \"app/[locale]/(main)/products/\")",
+      "Bash(git commit -m \"feat: add product detail pages\n\n- Create product detail view\n- Display product information and images\n- Add add-to-cart functionality\")",
+      "Bash(git add app/api/v1/auth/)",
+      "Bash(git commit -m \"feat: add authentication API endpoints\n\n- Implement login endpoint\n- Add registration endpoint\n- Handle session management\")",
+      "Bash(git add app/api/v1/banners/)",
+      "Bash(git commit -m \"feat: add public banners API\n\n- Implement banners listing endpoint\n- Return active banners for homepage\n- Filter by visibility and position\")",
+      "Bash(git add app/api/v1/products/)",
+      "Bash(git commit -m \"feat: add public products API\n\n- Implement products listing endpoint\n- Add product detail endpoint\n- Support pagination and filtering\")",
+      "Bash(git add app/api/v1/webhooks/)",
+      "Bash(git commit -m \"feat: add webhook handlers\n\n- Add Stripe webhook endpoint\n- Handle payment events\n- Process order confirmations\")"
     ],
     "deny": [],
     "ask": []
