@@ -1,0 +1,6 @@
+export { ProductRepository } from "./product.repository"
+export { InventoryRepository } from "./inventory.repository"
+export { OrderRepository } from "./order.repository"
+export { AccountRepository } from "./account.repository"
+export { BannerRepository } from "./banner.repository"
+export { UserRepository } from "./user.repository"
