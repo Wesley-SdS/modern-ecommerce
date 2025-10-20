@@ -161,5 +161,27 @@
     "noAccount": "¿No tienes una cuenta?",
     "hasAccount": "¿Ya tienes una cuenta?",
     "loading": "Cargando..."
+  },
+  "footer": {
+    "description": "Tu destino premium para productos de calidad y servicio excepcional.",
+    "shop": {
+      "title": "Comprar",
+      "allProducts": "Todos los Productos",
+      "categories": "Categorías",
+      "deals": "Ofertas"
+    },
+    "support": {
+      "title": "Soporte",
+      "contact": "Contacto",
+      "shipping": "Información de Envío",
+      "returns": "Devoluciones"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Nosotros",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio"
+    },
+    "copyright": "© 2025 Elegance. Todos los derechos reservados."
   }
 }

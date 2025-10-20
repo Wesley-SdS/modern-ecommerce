@@ -18,6 +18,8 @@ model User {
   
   orders       Order[]
   auditLogs    AuditLog[]
+  reviews      Review[]
+  wishlistItems WishlistItem[]
   
   @@index([email])
   @@map("users")
@@ -59,6 +61,9 @@ model Product {
   
   category           Category?            @relation(fields: [categoryId], references: [id], onDelete: SetNull)
   inventoryMovements InventoryMovement[]
+  productVariants    ProductVariant[]
+  reviews            Review[]
+  wishlistItems      WishlistItem[]
   
   @@index([slug])
   @@index([categoryId])
@@ -131,36 +136,60 @@ enum InventoryMovementType {
   RETURN
 }
 
-model AccountEntry {
-  id              String            @id @default(cuid())
-  type            AccountEntryType
-  amountCents     Int
-  dueDate         DateTime
-  paidDate        DateTime?
-  status          AccountEntryStatus @default(PENDING)
-  description     String
-  relatedOrderId  String?           @unique
-  createdAt       DateTime          @default(now())
-  updatedAt       DateTime          @updatedAt
+model ProductVariant {
+  id          String   @id @default(cuid())
+  productId   String
+  sku         String   @unique
+  name        String
+  attributes  Json     @default("{}")
+  priceCents  Int?
+  stock       Int      @default(0)
+  images      Json     @default("[]")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
   
-  relatedOrder Order? @relation(fields: [relatedOrderId], references: [id], onDelete: SetNull)
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   
-  @@index([type])
-  @@index([status])
-  @@index([dueDate])
-  @@map("account_entries")
+  @@index([productId])
+  @@index([sku])
+  @@map("product_variants")
 }
 
-enum AccountEntryType {
-  RECEIVABLE
-  PAYABLE
+model Review {
+  id          String   @id @default(cuid())
+  productId   String
+  userId      String
+  rating      Int
+  title       String?
+  comment     String?  @db.Text
+  images      Json     @default("[]")
+  verified    Boolean  @default(false)
+  helpful     Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([productId])
+  @@index([userId])
+  @@index([rating])
+  @@map("reviews")
 }
 
-enum AccountEntryStatus {
-  PENDING
-  PAID
-  OVERDUE
-  CANCELLED
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+  
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, productId])
+  @@index([userId])
+  @@index([productId])
+  @@map("wishlist_items")
 }
 
 model AuditLog {
@@ -175,4 +204,35 @@ model AuditLog {
   @@index([actorId])
   @@index([createdAt])
   @@map("audit_logs")
+}
+enum AccountEntryType {
+  RECEIVABLE
+  PAYABLE
+}
+
+enum AccountEntryStatus {
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+model AccountEntry {
+  id           String              @id @default(cuid())
+  type         AccountEntryType
+  amountCents  Int
+  dueDate      DateTime
+  status       AccountEntryStatus  @default(PENDING)
+  description  String
+  paidDate     DateTime?
+  orderId      String?             @unique
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  order        Order?              @relation(fields: [orderId], references: [id], onDelete: SetNull)
+
+  @@index([dueDate])
+  @@index([status])
+  @@index([type])
+  @@map("account_entries")
 }

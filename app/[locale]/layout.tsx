@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { routing } from "@/i18n/routing"
 import { Inter } from "next/font/google"
+import { QueryProvider } from "@/components/providers/query-provider"
 import "../globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -30,7 +31,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <QueryProvider>
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        </QueryProvider>
       </body>
     </html>
   )

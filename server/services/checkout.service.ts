@@ -129,7 +129,7 @@ export class CheckoutService {
       paidDate: new Date(),
       status: "PAID",
       description: `Payment for order ${order.id}`,
-      relatedOrder: { connect: { id: order.id } },
+      order: { connect: { id: order.id } },
     })
 
     return order

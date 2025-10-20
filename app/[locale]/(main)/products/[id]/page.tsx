@@ -5,15 +5,29 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, Heart, Share2 } from "lucide-react"
 import { AddToCartButton } from "@/components/shared/add-to-cart-button"
+import { ProductGallery } from "@/components/shared/product-gallery"
+import { logger } from "@/lib/logger"
 
 async function getProduct(id: string) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"}/api/v1/products/${id}`, {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000"
+    const res = await fetch(`${apiUrl}/api/v1/products/${id}`, {
       cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
-    if (!res.ok) return null
-    return res.json()
+    
+    if (!res.ok) {
+      logger.error(`Failed to fetch product ${id}`, { status: res.status, statusText: res.statusText })
+      return null
+    }
+    
+    const product = await res.json()
+    logger.info(`Product fetched successfully`, { productId: id, productName: product.title })
+    return product
   } catch (error) {
+    logger.error(`Error fetching product ${id}`, error)
     return null
   }
 }
@@ -36,26 +50,22 @@ export default async function ProductDetailPage({
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
-          <div className="space-y-4">
-            <div className="aspect-square relative rounded-2xl overflow-hidden bg-muted">
-              <Image
-                src={product.imageUrl || "/placeholder.svg?height=600&width=600"}
-                alt={product.name}
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="space-y-4 lg:sticky lg:top-4">
+            <ProductGallery
+              images={product.images || [product.imageUrl || "/placeholder.jpg"]}
+              productName={product.title || product.name}
+            />
           </div>
 
           {/* Product Info */}
           <div className="space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Badge variant="secondary">{product.category}</Badge>
+                {product.category && <Badge variant="secondary">{product.category}</Badge>}
                 {product.stock < 10 && product.stock > 0 && <Badge variant="destructive">{t("lowStock")}</Badge>}
                 {product.stock === 0 && <Badge variant="outline">{t("outOfStock")}</Badge>}
               </div>
-              <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+              <h1 className="text-4xl font-bold mb-4">{product.title || product.name}</h1>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -74,7 +84,9 @@ export default async function ProductDetailPage({
             </div>
 
             <div className="border-t border-b py-6">
-              <div className="text-4xl font-bold text-primary mb-2">R$ {product.price.toFixed(2)}</div>
+              <div className="text-4xl font-bold text-primary mb-2">
+                R$ {((product.priceCents || product.price || 0) / 100).toFixed(2)}
+              </div>
               {product.stock > 0 && (
                 <p className="text-sm text-muted-foreground">{t("inStock", { count: product.stock })}</p>
               )}
@@ -100,10 +112,12 @@ export default async function ProductDetailPage({
                 <span className="text-muted-foreground">{t("sku")}</span>
                 <span className="font-medium">{product.sku}</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">{t("category")}</span>
-                <span className="font-medium">{product.category}</span>
-              </div>
+              {product.category && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">{t("category")}</span>
+                  <span className="font-medium">{product.category}</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

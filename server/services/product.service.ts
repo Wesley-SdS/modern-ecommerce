@@ -3,6 +3,7 @@ import type { InventoryRepository } from "../repositories/inventory.repository"
 import type { CategoryRepository } from "../repositories/category.repository"
 import type { IProductService } from "../interfaces/product.service.interface"
 import type { Product, Category, PaginationResult } from "@/lib/types"
+import { parseProductImages } from "@/lib/utils/product-utils"
 
 export class ProductService implements IProductService {
   constructor(
@@ -43,9 +44,8 @@ export class ProductService implements IProductService {
     return {
       data: products.map(product => ({
         ...product,
-        images: Array.isArray(product.images) ? product.images : 
-                typeof product.images === 'string' ? JSON.parse(product.images) : [],
-        metadata: product.metadata as Record<string, any> || undefined,
+        images: parseProductImages(product.images),
+        metadata: product.metadata as Record<string, unknown> || undefined,
       })),
       pagination: {
         page,
@@ -61,9 +61,8 @@ export class ProductService implements IProductService {
     if (product) {
       return {
         ...product,
-        images: Array.isArray(product.images) ? product.images : 
-                typeof product.images === 'string' ? JSON.parse(product.images) : [],
-        metadata: product.metadata as Record<string, any> || undefined,
+        images: parseProductImages(product.images),
+        metadata: product.metadata as Record<string, unknown> || undefined,
       }
     }
 
@@ -71,9 +70,8 @@ export class ProductService implements IProductService {
     if (slugProduct) {
       return {
         ...slugProduct,
-        images: Array.isArray(slugProduct.images) ? slugProduct.images : 
-                typeof slugProduct.images === 'string' ? JSON.parse(slugProduct.images) : [],
-        metadata: slugProduct.metadata as Record<string, any> || undefined,
+        images: parseProductImages(slugProduct.images),
+        metadata: slugProduct.metadata as Record<string, unknown> || undefined,
       }
     }
 
@@ -106,9 +104,8 @@ export class ProductService implements IProductService {
 
     return {
       ...createdProduct,
-      images: Array.isArray(createdProduct.images) ? createdProduct.images : 
-              typeof createdProduct.images === 'string' ? JSON.parse(createdProduct.images) : [],
-      metadata: createdProduct.metadata as Record<string, any> || undefined,
+      images: parseProductImages(createdProduct.images),
+      metadata: createdProduct.metadata as Record<string, unknown> || undefined,
     }
   }
 
@@ -133,9 +130,8 @@ export class ProductService implements IProductService {
     
     return {
       ...updatedProduct,
-      images: Array.isArray(updatedProduct.images) ? updatedProduct.images : 
-              typeof updatedProduct.images === 'string' ? JSON.parse(updatedProduct.images) : [],
-      metadata: updatedProduct.metadata as Record<string, any> || undefined,
+      images: parseProductImages(updatedProduct.images),
+      metadata: updatedProduct.metadata as Record<string, unknown> || undefined,
     }
   }
 
@@ -155,9 +151,8 @@ export class ProductService implements IProductService {
 
     return {
       ...product,
-      images: Array.isArray(product.images) ? product.images : 
-              typeof product.images === 'string' ? JSON.parse(product.images) : [],
-      metadata: product.metadata as Record<string, any> || undefined,
+      images: parseProductImages(product.images),
+      metadata: product.metadata as Record<string, unknown> || undefined,
     }
   }
 

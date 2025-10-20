@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
-import { headers } from "next/headers"
+import os from "node:os"
 
 interface HealthCheckResult {
   status: "healthy" | "degraded" | "unhealthy"
@@ -60,8 +60,8 @@ async function checkDatabaseHealth() {
 
 async function checkMemoryHealth() {
   const usage = process.memoryUsage()
-  const totalMemory = require("os").totalmem()
-  const freeMemory = require("os").freemem()
+  const totalMemory = os.totalmem()
+  const freeMemory = os.freemem()
   const usedMemory = totalMemory - freeMemory
   const heapUsed = usage.heapUsed
   const heapTotal = usage.heapTotal
@@ -88,7 +88,8 @@ async function checkStripeHealth() {
       return { status: "fail" as const }
     }
     
-    const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+    const { default: Stripe } = await import("stripe")
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
     await stripe.balance.retrieve()
     
     return {

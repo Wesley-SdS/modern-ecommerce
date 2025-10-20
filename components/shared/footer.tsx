@@ -1,7 +1,12 @@
+"use client"
+
 import { Logo } from "./logo"
 import { Link } from "@/i18n/routing"
+import { useTranslations } from "next-intl"
 
 export function Footer() {
+  const t = useTranslations("footer")
+
   return (
     <footer className="border-t bg-muted/50">
       <div className="container mx-auto px-4 py-12">
@@ -9,68 +14,68 @@ export function Footer() {
           <div className="space-y-4">
             <Logo />
             <p className="text-sm text-muted-foreground">
-              Your premium destination for quality products and exceptional service.
+              {t("description")}
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Shop</h3>
+            <h3 className="mb-4 text-sm font-semibold">{t("shop.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/products" className="text-muted-foreground hover:text-foreground">
-                  All Products
+                  {t("shop.allProducts")}
                 </Link>
               </li>
               <li>
                 <Link href="/categories" className="text-muted-foreground hover:text-foreground">
-                  Categories
+                  {t("shop.categories")}
                 </Link>
               </li>
               <li>
                 <Link href="/deals" className="text-muted-foreground hover:text-foreground">
-                  Deals
+                  {t("shop.deals")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Support</h3>
+            <h3 className="mb-4 text-sm font-semibold">{t("support.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground">
-                  Contact Us
+                  {t("support.contact")}
                 </Link>
               </li>
               <li>
                 <Link href="/shipping" className="text-muted-foreground hover:text-foreground">
-                  Shipping Info
+                  {t("support.shipping")}
                 </Link>
               </li>
               <li>
                 <Link href="/returns" className="text-muted-foreground hover:text-foreground">
-                  Returns
+                  {t("support.returns")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold">{t("company.title")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground">
-                  About Us
+                  {t("company.about")}
                 </Link>
               </li>
               <li>
                 <Link href="/privacy" className="text-muted-foreground hover:text-foreground">
-                  Privacy Policy
+                  {t("company.privacy")}
                 </Link>
               </li>
               <li>
                 <Link href="/terms" className="text-muted-foreground hover:text-foreground">
-                  Terms of Service
+                  {t("company.terms")}
                 </Link>
               </li>
             </ul>
@@ -78,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 Elegance. All rights reserved.</p>
+          <p>{t("copyright")}</p>
         </div>
       </div>
     </footer>

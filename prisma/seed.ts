@@ -141,8 +141,6 @@ async function main() {
   const banners = [
     {
       id: "summer-sale",
-      title: "Summer Collection",
-      subtitle: "Up to 50% off selected items",
       imageUrl: "/summer-fashion-collection.png",
       targetUrl: "/products?category=clothing",
       position: 0,
@@ -150,8 +148,6 @@ async function main() {
     },
     {
       id: "electronics-deals",
-      title: "Tech Deals",
-      subtitle: "Latest gadgets at amazing prices",
       imageUrl: "/modern-electronics.png",
       targetUrl: "/products?category=electronics",
       position: 1,
@@ -162,8 +158,19 @@ async function main() {
   for (const bannerData of banners) {
     await prisma.banner.upsert({
       where: { id: bannerData.id },
-      update: bannerData,
-      create: bannerData,
+      update: {
+        imageUrl: bannerData.imageUrl,
+        targetUrl: bannerData.targetUrl,
+        position: bannerData.position,
+        active: bannerData.active,
+      },
+      create: {
+        id: bannerData.id,
+        imageUrl: bannerData.imageUrl,
+        targetUrl: bannerData.targetUrl,
+        position: bannerData.position,
+        active: bannerData.active,
+      },
     })
   }
 }

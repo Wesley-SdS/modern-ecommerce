@@ -82,7 +82,9 @@
       "title": "Discover Premium Products for Your Lifestyle",
       "description": "Shop the latest collection of high-quality products curated just for you.",
       "shopNow": "Shop Now",
-      "browseCategories": "Browse Categories"
+      "browseCategories": "Browse Categories",
+      "cta": "See Products",
+      "learnMore": "Learn More"
     },
     "features": {
       "freeShipping": {
@@ -100,7 +102,24 @@
       "easyReturns": {
         "title": "Easy Returns",
         "description": "30-day return policy"
+      },
+      "shipping": {
+        "title": "Fast Shipping",
+        "description": "Tracked delivery nationwide"
+      },
+      "secure": {
+        "title": "Secure Checkout",
+        "description": "Protected payments"
+      },
+      "payment": {
+        "title": "Easy Payments",
+        "description": "Pay in up to 12 installments"
       }
+    },
+    "featured": {
+      "title": "Featured",
+      "subtitle": "Selected products for you",
+      "viewAll": "View All"
     },
     "featuredProducts": {
       "title": "Featured Products",
@@ -161,5 +180,27 @@
     "noAccount": "Don't have an account?",
     "hasAccount": "Already have an account?",
     "loading": "Loading..."
+  },
+  "footer": {
+    "description": "Your premium destination for quality products and exceptional service.",
+    "shop": {
+      "title": "Shop",
+      "allProducts": "All Products",
+      "categories": "Categories",
+      "deals": "Deals"
+    },
+    "support": {
+      "title": "Support",
+      "contact": "Contact Us",
+      "shipping": "Shipping Info",
+      "returns": "Returns"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© 2025 Elegance. All rights reserved."
   }
 }
